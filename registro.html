@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios</title>
+    <style>
+        body {
+            background-image: url(descarga\ \(2\).jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .registro-container {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: rgb(103, 153, 182);
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .registro-box h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 50px;
+        }
+        label {
+            margin-bottom: 20px !important; 
+        }
+        
+    </style>
+    <script>
+        // Función para manejar el registro
+        function registrarUsuario() {
+            const usuario = document.getElementById("usuario").value;
+            const contrasena = document.getElementById("password").value;
+
+            const nuevoUsuario = {
+                usuario: usuario,
+                contrasena: contrasena,
+            };
+
+            // Verifica si ya existen usuarios en el almacenamiento local
+            const usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+            // Comprueba si el usuario ya existe
+            const usuarioExistente = usuariosRegistrados.find((u) => u.usuario === usuario);
+            if (usuarioExistente) {
+                alert("El usuario ya existe. Por favor, elige otro nombre de usuario.");
+                return;
+            }
+
+            usuariosRegistrados.push(nuevoUsuario);
+
+            // Almacena la lista de usuarios en el almacenamiento local
+            localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
+
+            alert("Usuario registrado correctamente.");
+        }
+    </script>
+</head>
+<body>
+    <div class="registro-container">
+        <div class="registro-box">
+            <h1>Registro de Usuarios</h1>
+            <form id="registro-form">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <br>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="contrasena" required>
+                <br>
+                <button type="button" onclick="registrarUsuario()">Registrarse</button>
+            </form>
+        </div>
+        <!-- Agrega el botón para volver al inicio de sesión -->
+        <button onclick="window.location.href = 'index.html';" class="boton-volver">Volver al Inicio de Sesión</button>
+    </div>
+
+    <footer>
+        <p style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">&copy; 2do Informatica - Lugares Turisticos del Ñeembucu</p>
+    </footer>
+</body>
+</html>

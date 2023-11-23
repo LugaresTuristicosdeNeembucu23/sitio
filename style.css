@@ -1,0 +1,156 @@
+/* --------------------------------------------- ESTILOS BASE ---------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fff;
+    color: black;
+}
+
+/* -------------------------------------------- PRINCIPAL --- ---------------------------------------*/
+main{
+    width: 90%;
+    max-width: 800px;
+    margin: 25px auto;
+    padding: 10px 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px black, 0 2px 10px black;
+}
+
+/* -------------------------------------------- FORMULARIO --- ---------------------------------------*/
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}
+
+.formulario_label{
+    display: block;
+    padding: 10px 0;
+}
+
+.formulario_grupo-input{
+    position: relative;
+}
+
+.formulario_input{
+    width: 90%;
+    background: transparent;
+    border-bottom: 2px black;
+    border-right: none;
+    color: black;
+    font-size: 17px;
+    outline: none;
+    line-height: 45px;
+    padding: 0 10px;
+    transition: all 1s;
+}
+
+.formulario_input:focus{
+    box-shadow: 0 0 5px green;
+}
+
+.formulario_validacion-estado{
+    position: absolute;
+    right: 45px;
+    bottom: 15px;
+    font-size: 16px;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.formulario_input-error{
+    font-size: 12px;
+    display: none;
+    margin-bottom: 0;
+}
+
+.formulario_input-error-activo{
+    display: block;
+}
+
+.formulario_span{
+    font-size: 1.1em;
+    font-weight: 100;
+}
+
+.formulario_checkbox{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 10px;
+}
+
+.formulario_grupo-terminos{
+    text-align: center;
+}
+
+.formulario_grupo-terminos, .formulario_mensaje, .formulario_grupo-btn-enviar{
+    grid-column: span 2;
+}
+
+.formulario_mensajes{
+    display: none;
+    padding: 15px;
+    text-align: center;
+    background: red;
+    border-radius: 5px;
+}
+.formulario_mensaje-activo {
+    display: block;
+}
+
+.formulario_grupo-btn-enviar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario_btn{
+    padding: 15px 35px;
+    background: black;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.formulario_btn:hover{
+    background: black;
+    transition: 1s;
+}
+
+.formulario_mensaje-exito{
+    display: none;
+    font-style: 2em;
+    color: green;
+    padding: 10px;
+    text-align: center;
+}
+
+.formulario_mensaje-exito-activo{
+    display: block;
+}
+
+/* --------------------------------------- VALIDACIÓN -- --------------------------------------- */
+.formulario_grupo-correcto, .formulario_validacion-estado{
+    color: green;
+    opacity: 1;
+}
+
+.formulario_grupo-incorrecto, .formulario_label{
+    color: black;
+}
+
+.formulario_grupo-incorrecto, .formulario_validacion-estado{
+    color: red;
+    opacity: 1;
+}
+
+.formulario_grupo-incorrecto, .formulario_input{
+    border: 1px solid black;
+}

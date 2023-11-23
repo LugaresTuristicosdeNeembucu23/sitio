@@ -1,0 +1,24 @@
+body {
+    background-image: url(descarga\ \(2\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-container {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(103, 153, 182);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.login-box h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 50px;
+} 
+label {
+    margin-bottom: 20px !important;
+}
